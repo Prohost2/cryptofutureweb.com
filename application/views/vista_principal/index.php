@@ -9,7 +9,7 @@
     <link href="<?php echo base_url('asset/css/animate.min.css') ?>" rel="stylesheet"/>
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/easy-autocomplete.css') ?>"> 
-	<title>CRYPTOFUTURE|</title>
+	<title>CRYPTOFUTURE| <?php echo $title ?></title>
 </head>
 <body>
 	
