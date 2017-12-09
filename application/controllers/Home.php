@@ -5,7 +5,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		echo "hola";		
+		$data['Title'] = "home";
+		$this->load->view('vista_principal/index', $data);
+		$this->load->view('vista_principal/nav');
+		$this->load->view('vista_principal/sesion');
+		$this->load->view('vista_principal/footer');
 	}
 
 }
