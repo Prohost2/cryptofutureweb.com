@@ -37,7 +37,7 @@ class Usuario extends CI_Model {
 	}
 	function recordarClave()
 	{
-		
+		$this->db->select('correo,clave')->where('');
 	}
 
 
