@@ -4,8 +4,39 @@
 
   $(document).ready(function() {
 
+alert('hola');
     base_url = "http://localhost/belen/index.php/";
-  	
+ 
+ url = 'https://api.blockchain.info/charts/market-price?format=json';
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+
+    // Check if the XMLHttpRequest object has a "withCredentials" property.
+    // "withCredentials" only exists on XMLHTTPRequest2 objects.
+    xhr.open(method, url, true);
+
+  } else if (typeof XDomainRequest != "undefined") {
+
+    // Otherwise, check if XDomainRequest.
+    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+
+  } else {
+
+    // Otherwise, CORS is not supported by the browser.
+    xhr = null;
+
+  }
+  return xhr;
+}
+
+var xhr = createCORSRequest('GET', url);
+if (!xhr) {
+  throw new Error('CORS not supported');
+}
+
     $("#save_filed").click(function(event) {
       $.post(base_url+'insertFiled', {'filed_name': $('#filed_type').val(),'filed_type': $('#filed_type').val() }, function(data, textStatus, xhr) {
         alert($("#filed_type").val());
