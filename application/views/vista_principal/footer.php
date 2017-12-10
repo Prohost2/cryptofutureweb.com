@@ -6,7 +6,10 @@
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" ></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 <footer>
-	
+
+
+  </main>
+</div>	
 </footer>
 </body>
 </html>
